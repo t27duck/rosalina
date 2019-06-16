@@ -24,3 +24,6 @@ group :bot do
   gem "discordrb", "~> 3.3.0"
   gem "rest-client"
 end
+
+gem "discord-notifier", require: false
+gem "feedjira", "~> 2.2.0", require: false
