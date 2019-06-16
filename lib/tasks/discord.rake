@@ -5,7 +5,7 @@ namespace :discord do
   task post_top_stories: :environment do
     raise "ROSALINA_TOP_STORY_WEBHOOK not set" unless ENV["ROSALINA_TOP_STORY_WEBHOOK"]
 
-    require "discord-notifier"
+    require "discord_notifier"
     require "feedjira"
     Feedjira.logger.level = Logger::FATAL
 
