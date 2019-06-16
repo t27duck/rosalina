@@ -46,7 +46,7 @@ if ENV["APIXU_KEY"]
         embed.title = "Currently in #{result[:location]}"
         embed.add_field(name: "Condition", value: result[:condition], inline: true)
         embed.add_field(name: "Temperature", value: result[:temperature], inline: true)
-        embed.add_field(name: "Humiditiy", value: result[:humidity], inline: true)
+        embed.add_field(name: "Humidity", value: result[:humidity], inline: true)
         embed.add_field(name: "Wind", value: result[:wind], inline: true)
         embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: result[:icon])
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(
