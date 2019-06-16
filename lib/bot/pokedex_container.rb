@@ -7,7 +7,7 @@ module PokedexContainer
 
   command :pokedex,
           description: "Enter a national dex id and get Pokemon info",
-          usage: "#{BOT_PREFIX}pokedex national_dex_id" do |event, national_dex_id|
+          usage: "#{::BOT_PREFIX}pokedex national_dex_id" do |event, national_dex_id|
     result = Pokedex.lookup(national_dex_id)
     if result[:error]
       event.respond(result[:error])

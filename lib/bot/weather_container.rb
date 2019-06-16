@@ -7,7 +7,7 @@ module WeatherContainer
 
   command :weather,
           description: "Get current conditions powered by Apixu",
-          usage: "#{BOT_PREFIX}weather Location|US Zip|CA Zip" do |event, *args|
+          usage: "#{::BOT_PREFIX}weather Location|US Zip|CA Zip" do |event, *args|
     location = Array(args).map { |a| a.to_s.strip }.join(" ")
     result = Apixu::CurrentConditions.new.fetch(location)
     if result[:error]

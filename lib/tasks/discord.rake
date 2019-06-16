@@ -29,6 +29,7 @@ namespace :discord do
     end
   end
 
+  desc "Starts the Discord bot"
   task bot: :environment do
     raise "ROSALINA_BOT_TOKEN not set" unless ENV["ROSALINA_BOT_TOKEN"]
 
