@@ -20,10 +20,10 @@ gem "bootsnap", ">= 1.4.2", require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
-group :bot do
-  gem "discordrb", "~> 3.3.0"
-  gem "rest-client"
-end
-
+# Used by top stories poster task
 gem "discord-notifier", require: false
 gem "feedjira", "~> 2.2.0", require: false
+
+# Used by bot task
+gem "discordrb", "~> 3.3.0", require: false
+gem "rest-client", require: false

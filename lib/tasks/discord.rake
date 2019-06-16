@@ -28,4 +28,20 @@ namespace :discord do
       PostedEntry.create!(slug: entry.id, url: entry.url)
     end
   end
+
+  task bot: :environment do
+    raise "ROSALINA_BOT_TOKEN not set" unless ENV["ROSALINA_BOT_TOKEN"]
+
+    require "discordrb"
+    require "bot/ping_container"
+    require "bot/weather_container"
+    require "bot/pokedex_container"
+
+    BOT_PREFIX = "%"
+    bot = Discordrb::Commands::CommandBot.new(token: ENV["ROSALINA_BOT_TOKEN"], prefix: BOT_PREFIX)
+    bot.include! PingContainer
+    bot.include! PokedexContainer
+    bot.include! WeatherContainer if ENV["APIXU_KEY"]
+    bot.run
+  end
 end

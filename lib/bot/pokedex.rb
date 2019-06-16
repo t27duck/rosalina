@@ -2,28 +2,20 @@
 
 require "yaml"
 
-unless "".respond_to?(:titleize)
-  class String
-    def titleize
-      split(/(\W)/).map(&:capitalize).join
-    end
-  end
-end
-
 class Pokedex
   IMG_URL_BASE = "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/sprites/pokemon/"
 
   def self.data
-    @data ||= YAML.load_file(File.join(__dir__, "..", "data", "pokemon.yml"))
+    @data ||= YAML.load_file(Rails.root.join("db", "data", "pokemon.yml"))
   end
 
   def self.lookup(national_dex_id)
     result = data[national_dex_id.to_i]
 
-    return { error: "Pokemon not found" } if result.nil?
+    return { error: "Pokémon not found" } if result.nil?
 
     species = result["species"]
-    species += " Pokemon" unless species.include?("Pokémon")
+    species += " Pokémon" unless species.include?("Pokémon")
 
     {
       name: result["name"].titleize,

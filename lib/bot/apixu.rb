@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "json"
+require "rest-client"
 
 module Apixu
   module Errors
@@ -20,7 +21,7 @@ module Apixu
       result = client.current(term)
       parse(result)
     rescue StandardError => e
-      puts e.message
+      Rails.logger.error("Error for bot weather API: #{e.message}")
       error = "Unable to get weather"
       search_options = "city name (with optional region and country), US zip code, Canada postal code, UK postcode, etc"
       fallback = "You can try searching at https://www.apixu.com/weather/"
