@@ -1,0 +1,8 @@
+# Format:
+#   emoji_name: <:emoji:id>
+#
+# Example:
+#   wii: <:wii:123456789>
+#   rage: <:rage:123456789>
+#
+# Use \:emoji_name: to get the id
