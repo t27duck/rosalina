@@ -3,5 +3,6 @@
 class PostedEntry < ApplicationRecord
   self.primary_key = :slug
 
-  validates :slug, uniqueness: true
+  validates :slug, uniqueness: true, presence: true
+  validates :url, presence: true
 end
