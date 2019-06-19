@@ -9,7 +9,8 @@ class CodeList < ApplicationRecord
     "3ds" => { label: "3DS", emoji: "3ds" },
     "xbl" => { label: "XBL", emoji: "xbox" },
     "psn" => { label: "PSN", emoji: "playstation" },
-    "steam" => { label: "Steam", emoji: "steam" }
+    "steam" => { label: "Steam", emoji: "steam" },
+    "nnid" => { label: "NNID" }
   }.freeze
 
   validates :discord_id, presence: true
