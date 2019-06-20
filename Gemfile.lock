@@ -61,7 +61,6 @@ GEM
     builder (3.2.3)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-    discord-notifier (1.0.2)
     discordrb (3.3.0)
       discordrb-webhooks (~> 3.3.0)
       ffi (>= 1.9.24)
@@ -182,7 +181,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
-  discord-notifier
   discordrb (~> 3.3.0)
   feedjira (~> 2.2.0)
   pg (>= 0.18, < 2.0)

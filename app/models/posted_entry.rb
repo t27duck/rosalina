@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class PostedEntry < ApplicationRecord
-  self.primary_key = :slug
-
-  validates :slug, uniqueness: true, presence: true
-  validates :url, presence: true
+  validates :slug, :key, :url, presence: true
+  validates :key, uniqueness: { scope: :slug }
 end
