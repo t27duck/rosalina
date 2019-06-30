@@ -38,7 +38,7 @@ class CodeHandler
     return unless has_codes?
 
     @event.channel.send_embed do |embed|
-      embed.title = "#{@discord_username}'s codes"
+      embed.title = "#{@discord_username}'s game codes"
       embed.description = code_list.system_code_display
       embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: @event.user.avatar_url)
       embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "Use '%codes help' for more info")

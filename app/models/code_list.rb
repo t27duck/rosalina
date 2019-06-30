@@ -10,7 +10,8 @@ class CodeList < ApplicationRecord
     "xbl" => { label: "XBL", emoji: "xbox" },
     "psn" => { label: "PSN", emoji: "playstation" },
     "steam" => { label: "Steam", emoji: "steam" },
-    "nnid" => { label: "NNID" }
+    "nnid" => { label: "NNID" },
+    "mm2" => { label: "MM2 Maker ID", emoji: "Mario" }
   }.freeze
 
   validates :discord_id, presence: true
@@ -19,7 +20,7 @@ class CodeList < ApplicationRecord
     SYSTEM_CODE_MAP.map do |key, settings|
       next if system_codes[key].blank?
 
-      emoji = "#{EmojiMap.map[settings[:emoji]]} "
+      emoji = "#{EmojiMap.map[settings[:emoji]]} " if settings[:emoji]
       label = settings[:label]
       code = system_codes[key]
 
