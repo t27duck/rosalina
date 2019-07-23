@@ -6,7 +6,7 @@ module PodcastContainer
   extend Discordrb::Commands::CommandContainer
 
   command :podcast,
-          description: "Enter a national dex id and get Pokemon info",
+          description: "Get information from an episode of the GoNintendo Podcast",
           usage: "%podcast episode_number" do |event, episode_number|
     result = Podcast.new.fetch(episode_number)
     if result[:error]
