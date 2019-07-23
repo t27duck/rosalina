@@ -36,11 +36,13 @@ namespace :discord do
     require "bot/codes_container"
     require "bot/ping_container"
     require "bot/weather_container"
+    require "bot/podcast_container"
     require "bot/pokedex_container"
 
     bot = Discordrb::Commands::CommandBot.new(token: ENV["ROSALINA_BOT_TOKEN"], prefix: "%")
     bot.include! CodesContainer
     bot.include! PingContainer
+    bot.include! PodcastContainer
     bot.include! PokedexContainer
     bot.include! WeatherContainer if ENV["APIXU_KEY"]
     bot.run
