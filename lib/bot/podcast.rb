@@ -30,6 +30,7 @@ class Podcast
       runtime: podcast["runtime"],
       published_on: podcast["published_on"],
       music_score: podcast["music_score"],
+      crew: Array(podcast["crew"]).sort,
       image_url: "https://gonintendo.com/images/podcast/gonintendo-small.png"
     }
   end

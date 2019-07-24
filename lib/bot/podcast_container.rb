@@ -19,6 +19,7 @@ module PodcastContainer
         embed.add_field(name: "Published", value: result[:published_on], inline: true) if result[:published_on]
         embed.add_field(name: "Music Score", value: result[:music_score], inline: true) if result[:music_score]
         embed.add_field(name: "Pokemon", value: result[:pokemon], inline: true) if result[:pokemon]
+        embed.add_field(name: "Crew", value: result[:crew].join(", "), inline: true) if result[:crew].any?
         embed.description = result[:description]
         embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: result[:image_url])
       end
