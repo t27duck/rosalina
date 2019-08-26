@@ -22,10 +22,11 @@ class Podcast
     raise "No podcast key in json" unless body.key?("podcast")
 
     podcast = body["podcast"]
+    url = podcast["url"].start_with?("/") ? "https://gonintendo.com#{podcast["url"]}" : podcast["url"]
     {
       title: podcast["title"],
       description: podcast["description"],
-      url: podcast["url"],
+      url: url,
       pokemon: podcast["pokemon"],
       runtime: podcast["runtime"],
       published_on: podcast["published_on"],
