@@ -43,7 +43,7 @@ module Apixu
       icon = "https:#{body['current']['condition']['icon']}"
       temperature = "#{body['current']['temp_f']}F (#{body['current']['temp_c']}C)"
       humidity = "#{body['current']['humidity']}%"
-      wind = "#{body['current']['wind_dir']} at #{body['current']['wind_mph']}MPH"
+      wind = "#{body['current']['wind_dir']} at #{body['current']['wind_mph']}MPH (#{body['current']['wind_kph']}KPH)"
       {
         location: location,
         condition: condition,
