@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require "bot/apixu"
+require "bot/weatherstack"
 
 module WeatherContainer
   extend Discordrb::Commands::CommandContainer
 
   command :weather,
-          description: "Get current conditions powered by Apixu",
+          description: "Get current conditions powered by weatherstack.com",
           usage: "%weather Location|US Zip|CA Zip" do |event, *args|
     location = Array(args).map { |a| a.to_s.strip }.join(" ")
-    result = Apixu::CurrentConditions.new.fetch(location)
+    result = Weatherstack::CurrentConditions.new.fetch(location)
     if result[:error]
       event.respond(result[:error])
     else
@@ -19,9 +19,11 @@ module WeatherContainer
         embed.add_field(name: "Temperature", value: result[:temperature], inline: true)
         embed.add_field(name: "Humidity", value: result[:humidity], inline: true)
         embed.add_field(name: "Wind", value: result[:wind], inline: true)
+        embed.add_field(name: "Pressure", value: result[:pressure], inline: true)
+        embed.add_field(name: "UV Index", value: result[:uv_index], inline: true)
         embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: result[:icon])
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(
-          text: "Powered by Apixu.com", icon_url: "http://cdn.apixu.com/v4/images/logo.png"
+          text: "Powered by weatherstack.com"
         )
       end
     end
