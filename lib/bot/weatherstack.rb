@@ -65,7 +65,7 @@ module Weatherstack
         pressure: pressure,
         uv_index: uv_index,
         cloudcover: cloudcover,
-        observation_time: observation_time
+        observation_time: observation_time,
         icon: icon
       }
     end
