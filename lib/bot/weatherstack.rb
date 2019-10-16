@@ -54,6 +54,8 @@ module Weatherstack
       wind = "#{body['current']['wind_dir']} at #{wind_mph}MPH (#{wind_kph}KPH)"
       pressure = "#{body['current']['pressure']}MB"
       uv_index = body["current"]["uv_index"].to_s
+      observation_time = "#{body['current']['observation_time']} UTC"
+      cloudcover = "#{body['current']['cloudcover']}%"
       {
         location: location,
         condition: condition,
@@ -62,6 +64,8 @@ module Weatherstack
         wind: wind,
         pressure: pressure,
         uv_index: uv_index,
+        cloudcover: cloudcover,
+        observation_time: observation_time
         icon: icon
       }
     end

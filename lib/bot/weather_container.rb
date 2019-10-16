@@ -21,6 +21,8 @@ module WeatherContainer
         embed.add_field(name: "Wind", value: result[:wind], inline: true)
         embed.add_field(name: "Pressure", value: result[:pressure], inline: true)
         embed.add_field(name: "UV Index", value: result[:uv_index], inline: true)
+        embed.add_field(name: "Cloud Cover", value: result[:cloudcover], inline: true)
+        embed.add_field(name: "Observed", value: result[:observation_time], inline: true)
         embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: result[:icon])
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(
           text: "Powered by weatherstack.com"
