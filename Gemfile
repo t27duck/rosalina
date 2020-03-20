@@ -4,7 +4,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "pg", ">= 0.18", "< 2.0"
-gem "rails", "~> 6.0.2"
+gem "rails", "~> 6.0.2.2"
 # gem 'puma', '~> 3.11'
 # gem 'sass-rails', '~> 5'
 # rails webpacker:install
@@ -24,3 +24,5 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "discordrb", "~> 3.3.0", require: false
 gem "feedjira", "~> 2.2.0", require: false
 gem "rest-client", require: false
+
+gem "json", ">= 2.3.0"
