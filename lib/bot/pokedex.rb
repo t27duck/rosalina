@@ -11,6 +11,8 @@ class Pokedex
 
   def self.lookup(national_dex_id)
     result = data[national_dex_id.to_i]
+    result ||= data.detect { |id, data| data['name'] == national_dex_id.to_s.downcase }
+    result = result.last if result.is_a?(Array)
 
     return { error: "Pokémon not found" } if result.nil?
 
