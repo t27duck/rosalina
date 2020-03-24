@@ -6,8 +6,8 @@ module PokedexContainer
   extend Discordrb::Commands::CommandContainer
 
   command :pokedex,
-          description: "Enter a national dex id and get Pokemon info",
-          usage: "%pokedex national_dex_id" do |event, national_dex_id|
+          description: "Enter a national dex id or name and get Pokemon info",
+          usage: "%pokedex national_dex_id|name" do |event, national_dex_id|
     result = Pokedex.lookup(national_dex_id)
     if result[:error]
       event.respond(result[:error])
