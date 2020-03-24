@@ -45,6 +45,7 @@ namespace :discord do
     bot.include! PingContainer
     bot.include! PodcastContainer
     bot.include! PokedexContainer
+    bot.include! SayingsContainer
     bot.include! WeatherContainer if ENV["WEATHERSTACK_KEY"]
     bot.run
   end
