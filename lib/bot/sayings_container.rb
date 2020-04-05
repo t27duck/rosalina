@@ -25,6 +25,21 @@ module SayingsContainer
     TXT
   end
 
+  command :warning do |event|
+    event.respond(<<~TXT)
+    :warning: WARNING - HEALTH AND SAFETY :warning:
+
+    BEFORE PLAYING, READ YOUR OPERATIONS
+     MANUAL FOR IMPORTANT INFORMATION
+         ABOUT YOUR HEALTH AND SAFETY.
+
+                              Also online at
+             http://nintendo.com/healthsafety/
+
+                        Press Ⓐ to continue.
+    TXT
+  end
+
   command :song do |event|
     event.respond("Let's gather 'round the chatroom and sing our chatroom song. Our C-H-A-T-R-O-O-M song. And if you don't think that we can sing it faster then you're wrong But it'll help if you just sing along!")
   end
