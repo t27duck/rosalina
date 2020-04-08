@@ -40,17 +40,17 @@ module SayingsContainer
     TXT
 
     ds = <<~TXT
-    :warning: WARNING - HEALTH AND SAFETY
+                  :warning: WARNING - HEALTH AND SAFETY
 
-    BEFORE PLAYING, READ THE HEALTH
-    AND SAFETY PRECAUTIONS BOOKLET
-      FOR IMPORTANT INFORMATION
-     ABOUT YOUR HEALTH AND SAFETY.
+                  BEFORE PLAYING, READ THE HEALTH
+                 AND SAFETY PRECAUTIONS BOOKLET
+                      FOR IMPORTANT INFORMATION
+                  ABOUT YOUR HEALTH AND SAFETY.
 
-TO GET AN EXTRA COPY FOR YOUR REGION, GO ONLINE AT
-    www.nintendo.com/healthsafety/
+ TO GET AN EXTRA COPY FOR YOUR REGION, GO ONLINE AT
+                      www.nintendo.com/healthsafety/
 
-     Press any button to continue.
+                          Press any button to continue.
     TXT
 
     out = wii
