@@ -40,7 +40,7 @@ module SayingsContainer
     TXT
 
     ds = <<~TXT
-                  :warning: WARNING - HEALTH AND SAFETY
+                                    :warning: WARNING - HEALTH AND SAFETY
 
                                     BEFORE PLAYING, READ THE HEALTH
                                    AND SAFETY PRECAUTIONS BOOKLET
