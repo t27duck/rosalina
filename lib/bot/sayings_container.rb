@@ -25,8 +25,8 @@ module SayingsContainer
     TXT
   end
 
-  command :warning do |event|
-    event.respond(<<~TXT)
+  command :warning do |event, which|
+    wii = <<~TXT
     :warning: WARNING - HEALTH AND SAFETY :warning:
 
     BEFORE PLAYING, READ YOUR OPERATIONS
@@ -34,10 +34,33 @@ module SayingsContainer
          ABOUT YOUR HEALTH AND SAFETY.
 
                               Also online at
-             http://nintendo.com/healthsafety/
+              www.nintendo.com/healthsafety/
 
                         Press Ⓐ to continue.
     TXT
+
+    ds = <<~TXT
+    :warning: WARNING - HEALTH AND SAFETY
+
+    BEFORE PLAYING, READ THE HEALTH
+    AND SAFETY PRECAUTIONS BOOKLET
+      FOR IMPORTANT INFORMATION
+     ABOUT YOUR HEALTH AND SAFETY.
+
+TO GET AN EXTRA COPY FOR YOUR REGION, GO ONLINE AT
+    www.nintendo.com/healthsafety/
+
+     Press any button to continue.
+    TXT
+
+    out = wii
+    if which == 'ds'
+      out = ds
+    elsif out.blank?
+      out = [wii, ds].sample
+    end
+
+    event.respond(out)
   end
 
   command :song do |event|
