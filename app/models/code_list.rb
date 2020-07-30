@@ -12,7 +12,7 @@ class CodeList < ApplicationRecord
     "steam" => { label: "Steam", emoji: "steam" },
     "nnid" => { label: "NNID" },
     "mm2" => { label: "MM2 Maker ID", emoji: "Mario" },
-    "nhdi" => { label: "AC: NH Dream Island", emoji: "dreamisland" }
+    "nhda" => { label: "ACNH Dream Address", emoji: "dreamisland" }
   }.freeze
 
   validates :discord_id, presence: true
