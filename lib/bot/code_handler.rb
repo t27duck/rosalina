@@ -55,13 +55,13 @@ class CodeHandler
   def figure_out_id(arg1, arg2)
     return @discord_id if arg1.blank?
 
-    if arg1.match?(/\A<@!.+>\z/)
-      id = arg1.gsub(/\A<@!/, '')
+    if arg1.match?(/\A<@!?.+>\z/)
+      id = arg1.gsub(/\A<@!?/, '')
       id = id.gsub(/>\z/, '')
       return id
     else
       arg = [arg1, arg2].join(' ').strip
-      id, user = @bot.users.detect { |id, user| user.username == arg }.to_a.flatten
+      id, user = @bot.users.detect { |id, user| user.username.downcase == arg.downcase }.to_a.flatten
       return id
     end
   end
