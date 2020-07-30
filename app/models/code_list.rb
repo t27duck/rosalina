@@ -11,7 +11,8 @@ class CodeList < ApplicationRecord
     "psn" => { label: "PSN", emoji: "playstation" },
     "steam" => { label: "Steam", emoji: "steam" },
     "nnid" => { label: "NNID" },
-    "mm2" => { label: "MM2 Maker ID", emoji: "Mario" }
+    "mm2" => { label: "MM2 Maker ID", emoji: "Mario" },
+    "nhdi" => { label: "AC: NH Dream Island", emoji: "dreamisland" }
   }.freeze
 
   validates :discord_id, presence: true
