@@ -17,7 +17,7 @@ class CodeHandler
         Code Service Commands:
         **%codes** - View your codes.
         **%codes view [username]** - View someone else's codes.
-        **%codes add [service] code** - Adds a code for a service.
+        **%codes add [service] [code]** - Adds a code for a service.
         **%codes remove [service]** - Removes the code stored for the given service.
         **%codes clear** - Removes all codes.
         Valid services: #{valid_systems.sort.join(' ')}
