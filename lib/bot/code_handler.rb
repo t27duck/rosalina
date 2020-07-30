@@ -42,7 +42,7 @@ class CodeHandler
     id = figure_out_id(arg1, arg2)
     return unless has_codes?(id)
 
-    user = @bot.users[id.id]
+    user = @bot.users[id.to_i]
 
     @event.channel.send_embed do |embed|
       embed.title = "#{user.username}'s game codes"
