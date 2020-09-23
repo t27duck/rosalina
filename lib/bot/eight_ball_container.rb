@@ -2,10 +2,10 @@
 
 require "bot/eight_ball"
 
-module EightballControllerCoontainer
+module EightballControllerContainer
   extend Discordrb::Commands::CommandContainer
 
-  command :8ball,
+  command :'8ball',
           description: "Ask the magic 8-ball a question and get an 'answer'.",
           usage: "%8ball I have a question?" do |event, *args|
 
