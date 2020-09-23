@@ -2,7 +2,7 @@
 
 require "bot/eight_ball"
 
-module EightballContainer
+module EightBallContainer
   extend Discordrb::Commands::CommandContainer
 
   command :'8ball',
