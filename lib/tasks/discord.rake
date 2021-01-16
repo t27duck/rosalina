@@ -40,6 +40,7 @@ namespace :discord do
     require "bot/pokedex_container"
     require "bot/sayings_container"
     require "bot/eight_ball_container"
+    require "bot/coin_flip_container"
 
     bot = Discordrb::Commands::CommandBot.new(token: ENV["ROSALINA_BOT_TOKEN"], prefix: "%")
     bot.include! CodesContainer
@@ -48,6 +49,7 @@ namespace :discord do
     bot.include! PokedexContainer
     bot.include! SayingsContainer
     bot.include! EightBallContainer
+    bot.include! CoinFlipContainer
     bot.include! WeatherContainer if ENV["WEATHERSTACK_KEY"]
     bot.run
   end
