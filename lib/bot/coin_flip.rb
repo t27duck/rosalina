@@ -7,7 +7,7 @@ class CoinFlip
 
   def self.flip
     beginning = BEGINNINGS.sample
-    number = rand(1)
+    number = rand(2)
     ":coin: #{beginning} #{RESULTS[number]}. #{EmojiMap.map[EMOJI[number]]}"
   end
 end
