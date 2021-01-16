@@ -5,7 +5,7 @@ require "bot/coin_flip"
 module CoinFlipContainer
   extend Discordrb::Commands::CommandContainer
 
-  command :'8ball',
+  command :flip,
           description: "Flip a coin, make a decision.",
           usage: "%flip" do |event, *args|
 
