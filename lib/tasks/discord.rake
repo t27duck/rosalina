@@ -15,6 +15,7 @@ namespace :discord do
 
     require "feed_poster"
     FeedPoster.new("allnews").perform
+    FeedPoster.new("nintendoeverything").perform
   end
 
   desc "Cleans up posted_entries"

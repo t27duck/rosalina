@@ -8,12 +8,20 @@ class FeedPoster
     "topstories" => {
       url: "https://gonintendo.com/feeds/topstories.xml",
       username: "GoNintendo Top Stories",
-      webhook: ENV["ROSALINA_TOP_STORY_WEBHOOK"]
+      webhook: ENV["ROSALINA_TOP_STORY_WEBHOOK"],
+      icon: "https://i.imgur.com/66AN7p9.jpg"
     },
     "allnews" => {
       url: "https://gonintendo.com/feeds/all.xml",
       username: "New Posts on GoNintendo",
-      webhook: ENV["ROSALINA_ALL_NEWS_WEBHOOK"]
+      webhook: ENV["ROSALINA_ALL_NEWS_WEBHOOK"],
+      icon: "https://i.imgur.com/66AN7p9.jpg"
+    },
+    "nintendoeverything" => {
+      url: "https://nintendoeverything.com/feed",
+      username: "New Posts on NintendoEverything.com",
+      webhook: ENV["ROSALINA_ALL_NEWS_WEBHOOK"],
+      icon: "https://i.imgur.com/RMLFQYk.png"
     }
   }.freeze
 
@@ -51,7 +59,7 @@ class FeedPoster
         embed.url = entry.url
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(
           text: "posted by #{entry.author}",
-          icon_url: "https://i.imgur.com/66AN7p9.jpg"
+          icon_url: FEEDS[@key][:icon]
         )
       end
     end
