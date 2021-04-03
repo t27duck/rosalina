@@ -24,8 +24,8 @@ namespace :discord do
 
     FeedPoster::FEEDS.keys.each do |key|
       PostedEntry.where(key: key).where.not(
-        id: PostedEntry.where(key: key).order(created_at: :desc).limit(45)
-      )
+        id: PostedEntry.where(key: key).order(created_at: :desc).limit(60)
+      ).delete_all
     end
   end
 
