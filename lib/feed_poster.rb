@@ -21,7 +21,7 @@ class FeedPoster
       url: "https://nintendoeverything.com/feed",
       username: "New Posts on NintendoEverything.com",
       webhook: ENV["ROSALINA_ALL_NEWS_WEBHOOK"],
-      icon: "https://i.imgur.com/RMLFQYk.png"
+      icon: "https://nintendoeverything.com/wp-content/uploads/cropped-OLmaPV3Y_400x400-1-32x32.jpg"
     }
   }.freeze
 
