@@ -21,6 +21,6 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Used by Discord tasks
-gem "discordrb", "~> 3.3.0", require: false
+gem "discordrb",  github: "shardlab/discordrb", tag: "v3.4.2", require: false
 gem "feedjira", require: false
 gem "rest-client", require: false

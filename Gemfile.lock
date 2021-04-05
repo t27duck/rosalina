@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/shardlab/discordrb.git
+  revision: 57599e838fc1583e709088f3f06c9f7fdfb99cc9
+  tag: v3.4.2
+  specs:
+    discordrb (3.4.2)
+      discordrb-webhooks (~> 3.4.2)
+      ffi (>= 1.9.24)
+      opus-ruby
+      rest-client (>= 2.0.0)
+      websocket-client-simple (>= 0.3.0)
+    discordrb-webhooks (3.4.2)
+      rest-client (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -65,15 +79,6 @@ GEM
     builder (3.2.4)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
-    discordrb (3.3.0)
-      discordrb-webhooks (~> 3.3.0)
-      ffi (>= 1.9.24)
-      opus-ruby
-      rbnacl (~> 3.4.0)
-      rest-client (>= 2.1.0.rc1)
-      websocket-client-simple (>= 0.3.0)
-    discordrb-webhooks (3.3.0)
-      rest-client (>= 2.1.0.rc1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
@@ -142,8 +147,6 @@ GEM
       rake (>= 0.8.7)
       thor (~> 1.0)
     rake (13.0.3)
-    rbnacl (3.4.0)
-      ffi
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -177,7 +180,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
-  discordrb (~> 3.3.0)
+  discordrb!
   feedjira
   pg (~> 1.1)
   rails (~> 6.1.0)
