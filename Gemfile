@@ -22,5 +22,5 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Used by Discord tasks
 gem "discordrb", "~> 3.3.0", require: false
-gem "feedjira", "~> 2.2.0", require: false
+gem "feedjira", require: false
 gem "rest-client", require: false

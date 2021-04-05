@@ -2,6 +2,7 @@
 
 require "discordrb/webhooks"
 require "feedjira"
+require "net/http"
 
 class FeedPoster
   FEEDS = {
@@ -44,7 +45,28 @@ class FeedPoster
   private
 
   def feed
-    Feedjira::Feed.fetch_and_parse(FEEDS[@key][:url])
+    Feedjira.parse(make_feed_request(FEEDS[@key][:url]))
+  end
+
+  def make_feed_request(request_url, limit = 5)
+    raise ArgumentError, "too many HTTP redirects" if limit <= 0
+
+    uri = URI.parse(request_url)
+    req = Net::HTTP::Get.new(uri.request_uri)
+    req["Accept-Language"] = "*"
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = (uri.scheme == "https")
+    http.open_timeout = 5
+    http.read_timeout = 5
+    response = http.start { http.request(req) }
+
+    case response
+    when Net::HTTPSuccess
+      response
+    when Net::HTTPRedirection
+      location = response["location"]
+      make_request(location, limit - 1)
+    end
   end
 
   def client
