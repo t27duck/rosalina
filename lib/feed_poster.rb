@@ -68,7 +68,7 @@ class FeedPoster
 
     case response
     when Net::HTTPSuccess
-      response
+      response.body
     when Net::HTTPRedirection
       location = response["location"]
       make_request(location, limit - 1)
@@ -80,6 +80,7 @@ class FeedPoster
   end
 
   def post(entry)
+    sleep 1
     client.execute do |builder|
       builder.username = FEEDS[@key][:username]
       builder.add_embed do |embed|
