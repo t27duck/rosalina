@@ -23,6 +23,12 @@ class FeedPoster
       username: "New Posts on NintendoEverything.com",
       webhook: ENV["ROSALINA_ALL_NEWS_WEBHOOK"],
       icon: "https://nintendoeverything.com/wp-content/uploads/cropped-OLmaPV3Y_400x400-1-32x32.jpg"
+    },
+    "mynintendonews" => {
+      url: "https://mynintendonews.com/feed/",
+      username: "New Posts on MyNintendoNews.com",
+      webhook: ENV["ROSALINA_ALL_NEWS_WEBHOOK"],
+      icon: "https://i2.wp.com/mynintendonews.com/wp-content/uploads/2021/02/toad.jpg"
     }
   }.freeze
 

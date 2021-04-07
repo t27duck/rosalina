@@ -6,7 +6,11 @@ namespace :discord do
     raise "ROSALINA_TOP_STORY_WEBHOOK not set" unless ENV["ROSALINA_TOP_STORY_WEBHOOK"]
 
     require "feed_poster"
-    FeedPoster.new("topstories").perform
+
+    begin
+      FeedPoster.new("topstories").perform
+    rescue => e
+    end
   end
 
   desc "Fetches the latest stories and posts to Discord"
@@ -14,8 +18,20 @@ namespace :discord do
     raise "ROSALINA_ALL_NEWS_WEBHOOK not set" unless ENV["ROSALINA_ALL_NEWS_WEBHOOK"]
 
     require "feed_poster"
-    FeedPoster.new("allnews").perform
-    # FeedPoster.new("nintendoeverything").perform
+    begin
+      FeedPoster.new("allnews").perform
+    rescue => e
+    end
+
+    begin
+      FeedPoster.new("nintendoeverything").perform
+    rescue => e
+    end
+
+    begin
+      FeedPoster.new("mynintendonews").perform
+    rescue => e
+    end
   end
 
   desc "Cleans up posted_entries"
