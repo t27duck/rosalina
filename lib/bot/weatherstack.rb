@@ -20,6 +20,9 @@ module Weatherstack
       return { error: "No location given" } if search_term.to_s.empty?
 
       term = search_term.to_s.downcase
+
+      term = "topeka, kansas" if ["google", "topikachu"].include?(term)
+
       result = client.current(term)
       parse(result)
     rescue StandardError => e
